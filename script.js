@@ -21,21 +21,13 @@ if (workSection && moreProjectsToggle && extraProjects.length > 0) {
 			if (isExpanded) {
 				card.hidden = false;
 				card.setAttribute('aria-hidden', 'false');
-				void card.offsetWidth;
 				card.classList.add('is-entering');
 				return;
 			}
 
-			card.classList.add('is-leaving');
-
-			const onHide = () => {
-				card.hidden = true;
-				card.setAttribute('aria-hidden', 'true');
-				card.classList.remove('is-leaving');
-				card.removeEventListener('animationend', onHide);
-			};
-
-			card.addEventListener('animationend', onHide);
+			card.hidden = true;
+			card.setAttribute('aria-hidden', 'true');
+			card.classList.remove('is-leaving');
 		});
 	});
 }

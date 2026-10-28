@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ultrakill Vertical Slice</title>
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		.slice-page {
+			min-height: 100vh;
+			background: #b8a391;
+			color: #502d27;
+		}
+
+		.slice-header {
+			position: sticky;
+			top: 0;
+			z-index: 10;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 24px;
+			padding: 20px 40px;
+			background: #fdfbf7;
+			border-bottom: 1px solid rgba(80, 45, 39, 0.12);
+		}
+
+		.slice-header a {
+			color: #502d27;
+			text-decoration: none;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+		}
+
+		.slice-section {
+			width: min(1120px, calc(100% - 32px));
+			margin: 24px auto;
+			background: #fdfbf7;
+			border: 1px solid rgba(80, 45, 39, 0.1);
+			border-radius: 24px;
+		}
+
+		.slice-section h2 {
+			line-height: 1.05;
+			letter-spacing: -0.03em;
+			color: #502d27;
+		}
+		.slice-card p,
+		.slice-list li {
+			font-size: 16px;
+			line-height: 1.75;
+			color: #523b32;
+		}
+
+		.slice-meta {
+			display: flex;
+			gap: 12px;
+			flex-wrap: wrap;
+			margin-top: 24px;
+		}
+
+		.pill {
+			display: inline-flex;
+			align-items: center;
+			padding: 10px 14px;
+			border-radius: 999px;
+			background: rgba(80, 45, 39, 0.08);
+			color: #502d27;
+			font-size: 13px;
+			font-weight: 600;
+		}
+
+		.slice-grid {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			gap: 20px;
+			padding: 24px;
+		}
+
+		.slice-card {
+			background: #eae6dd;
+			border: 1px solid rgba(80, 45, 39, 0.08);
+			border-radius: 20px;
+			padding: 24px;
+		}
+
+		.slice-section h2 {
+			font-size: clamp(26px, 3vw, 38px);
+			margin-bottom: 14px;
+		}
+
+		.team-card {
+			grid-column: span 7;
+		}
+
+		.role-card {
+			grid-column: span 5;
+		}
+
+		.gifs-card {
+			grid-column: 1 / -1;
+		}
+
+		.shooting-card {
+			grid-column: 1 / -1;
+		}
+
+		.slice-list {
+			list-style: none;
+			display: grid;
+			gap: 14px;
+			margin-top: 18px;
+		}
+
+		.slice-list li {
+			padding: 14px 16px;
+			border-radius: 16px;
+			background: rgba(80, 45, 39, 0.05);
+		}
+
+		.gif-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			justify-items: center;
+			gap: 18px;
+			margin-top: 18px;
+		}
+
+		.gif-item {
+			overflow: hidden;
+			border-radius: 18px;
+			background: #eae6dd;
+			border: 1px solid rgba(80, 45, 39, 0.08);
+			width: 100%;
+			max-width: 960px;
+		}
+
+		.gif-item img {
+			width: 100%;
+			height: 480px;
+			object-fit: cover;
+			display: block;
+		}
+
+		.gif-caption {
+			padding: 14px 16px 16px;
+			font-size: 14px;
+			color: rgba(80, 45, 39, 0.8);
+		}
+
+		.note {
+			margin-top: 14px;
+			font-size: 14px;
+			color: rgba(80, 45, 39, 0.72);
+		}
+
+		@media (max-width: 860px) {
+			.slice-header {
+				padding: 16px 20px;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			.slice-section {
+				width: min(1120px, calc(100% - 20px));
+				margin: 16px auto;
+			}
+
+			.slice-grid {
+				grid-template-columns: 1fr;
+				padding: 18px;
+			}
+
+			.team-card,
+			.role-card,
+			.gifs-card {
+				grid-column: auto;
+			}
+
+			.gif-item img {
+				height: 320px;
+			}
+		}
+
+		.shooting-preview {
+			margin-top: 18px;
+			border-radius: 18px;
+			overflow: hidden;
+			border: 1px solid rgba(80, 45, 39, 0.08);
+			background: #eae6dd;
+		}
+
+		.shooting-preview img {
+			width: 100%;
+			height: 440px;
+			object-fit: cover;
+			display: block;
+		}
+
+		.shooting-preview-caption {
+			padding: 14px 16px 16px;
+			font-size: 14px;
+			color: rgba(80, 45, 39, 0.8);
+		}
+
+		.process-picture {
+			margin-top: 18px;
+			border-radius: 18px;
+			overflow: hidden;
+			border: 1px solid rgba(80, 45, 39, 0.08);
+			background: #eae6dd;
+		}
+
+		.process-picture img {
+			width: 100%;
+			height: 580px;
+			object-fit: cover;
+			display: block;
+		}
+
+		.process-picture-caption {
+			padding: 14px 16px 16px;
+			font-size: 14px;
+			color: rgba(80, 45, 39, 0.8);
+		}
+
+		@media (max-width: 860px) {
+			.shooting-preview img {
+				height: 320px;
+			}
+
+			.process-picture img {
+				height: 440px;
+			}
+		}
+	</style>
+</head>
+<body class="slice-page">
+	<header class="slice-header">
+		<a href="index.html">Back to portfolio</a>
+		<a href="#gifs">Jump to GIFs</a>
+	</header>
+
+	<main>
+		<section class="slice-section">
+			<div class="slice-grid">
+				<article class="slice-card team-card">
+					<h2>How the team worked</h2>
+					<p>
+						The first thing we did was get to know eachothers and what we were good at. Once we found out what we were good at, we started to plan the tasks for each person so we could work on the project as efficiently as possible.
+					</p>
+					<ul class="slice-list">
+						<li>We did a standup every morning to discuss the day's goals and any blockers.</li>
+						<li>We shared progress often in a shared group chat to keep everyone informed.</li>
+						<li>We had a trello board to distribute tasks and track progress.</li>
+					</ul>
+				</article>
+
+				<article class="slice-card role-card">
+					<h2>What I did</h2>
+					<p>
+						My role in the project was to design and implement the shooting mechanic along with the UI.
+					</p>
+					<ul class="slice-list">
+						<li>I designed and built the UI so the project felt clear and polished.</li>
+						<li>I implemented the shooting mechanic and helped make it feel good to play.</li>
+						<li>I tested the slice, found issues, and helped refine the final result with the team.</li>
+					</ul>
+					<p class="note">
+					</p>
+				</article>
+
+				<article class="slice-card gifs-card" id="gifs">
+					<h2>GIF</h2>
+					<p>Add the gameplay GIF here to show the slice in action.</p>
+					<div class="gif-grid">
+						<figure class="gif-item">
+							<img src="VerticalSlice.gif" alt="Vertical slice gameplay GIF">
+							<figcaption class="gif-caption">Gameplay highlight 1</figcaption>
+						</figure>
+					</div>
+				</article>
+
+				<article class="slice-card shooting-card">
+					<h2>How I made the shooting</h2>
+					<p>
+						The shooting was made with a raycast that would detect if the player was aiming at an enemy. If the player was aiming at an enemy, the enemy would take damage and play an attack animation made by the artists. The shooting was made to feel quick and responsive, so the player could react fast and keep moving.
+					</p>
+					<ul class="slice-list">
+						<li>I set up the shooting logic so input felt immediate and easy to control.</li>
+						<li>I worked on the visual feedback so each shot looked clear on screen.</li>
+						<li>I balanced the mechanic through testing until it felt smooth in the project.</li>
+					</ul>
+					<div class="shooting-preview">
+						<img src="RecordingofGame_-_Trim-ezgif.com-video-to-gif-converter.gif" alt="Placeholder for shooting GIF">
+						<div class="shooting-preview-caption">This is the shooting development process</div>
+					</div>
+				</article>
+
+				<article class="slice-card shooting-card">
+					<h2>Visual sheet</h2>
+					<p>
+						This is the visual sheet I made to showcase the shooting simply
+					</p>
+					<div class="process-picture">
+						<img src="image23432423432423.png" alt="Development process picture placeholder">
+						<div class="process-picture-caption">Visual sheet</div>
+					</div>
+				</article>
+
+			</div>
+		</section>
+	</main>
+</body>
+</html>
