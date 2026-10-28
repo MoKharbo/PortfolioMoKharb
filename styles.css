@@ -116,10 +116,14 @@ nav a {
 }
 
 .name img {
+    display: block;
+    flex: 0 0 auto;
     position: relative;
     left: -50px;
     width: clamp(150px, 22vw, 230px);
     height: clamp(190px, 30vw, 300px);
+    max-width: 230px;
+    max-height: 300px;
     border-radius: 18px 18px 6px 18px;
     object-fit: cover;
     object-position: center;
@@ -635,6 +639,8 @@ nav a {
         left: -26px;
         width: 110px;
         height: 150px;
+        max-width: 110px;
+        max-height: 150px;
     }
 
     .hero {
