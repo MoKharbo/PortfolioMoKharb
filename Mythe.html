@@ -23,6 +23,10 @@
 			padding: 20px 40px;
 			background: #fdfbf7;
 			border-bottom: 1px solid rgba(80, 45, 39, 0.12);
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+			pointer-events: auto;
 		}
 
 		.slice-header a {
@@ -30,6 +34,18 @@
 			text-decoration: none;
 			font-weight: 600;
 			letter-spacing: 0.5px;
+		}
+
+		.slice-header nav {
+			display: flex;
+			gap: 24px;
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+		}
+
+		.slice-page .slice-header nav a {
+			color: #502d27;
 		}
 
 		.slice-section {
@@ -238,6 +254,11 @@
 <body class="slice-page">
 	<header class="slice-header">
 		<a href="index.html">Back to portfolio</a>
+		<nav aria-label="Portfolio navigation">
+			<a href="index.html#work">Work</a>
+			<a href="index.html#about">About</a>
+			<a href="index.html#contact">Contact</a>
+		</nav>
 		<a href="#gifs">Jump to GIFs</a>
 	</header>
 

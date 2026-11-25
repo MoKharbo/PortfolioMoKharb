@@ -20,15 +20,132 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="introduction">
-                <h1>Hello! I'm</h1>
+        <section class="hero" aria-label="Featured projects">
+            <div class="project-carousel" id="projectCarousel" aria-live="polite">
+                <article class="project-slide is-active">
+                    <img src="TheCreatureWithin Banner.jpg" alt="The Creature Within game project">
+                    <div class="project-slide-overlay"></div>
+                    <div class="project-slide-content">
+                        <!-- <p class="project-slide-kicker">01 / 03</p> -->
+                        <h1>The Creature Within</h1>
+                        <p>Unity game project.</p>
+                        <a href="TheCreatureWithin.html" class="project-slide-link">View project <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                <article class="project-slide">
+                    <img src="imDSfbzdhbrdbage.png" alt="Ultrakill Vertical Slice game project">
+                    <div class="project-slide-overlay"></div>
+                    <div class="project-slide-content">
+                        <!-- <p class="project-slide-kicker">02 / 03</p> -->
+                        <h1>Ultrakill Vertical Slice</h1>
+                        <p>Team project — Unity, C#.</p>
+                        <a href="Verticalslice.html" class="project-slide-link">View project <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                <article class="project-slide">
+                    <img src="imdbrhrsreage.png" alt="Godspeed game project">
+                    <div class="project-slide-overlay"></div>
+                    <div class="project-slide-content">
+                        <!-- <p class="project-slide-kicker">03 / 03</p> -->
+                        <h1>Godspeed</h1>
+                        <p>My first team project.</p>
+                        <a href="Mythe.html" class="project-slide-link">View project <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+                <div class="carousel-controls">
+                    <button class="carousel-arrow carousel-previous" type="button" aria-label="Previous project">←</button>
+                    <div class="carousel-dots" role="tablist" aria-label="Featured projects">
+                        <button class="carousel-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show The Creature Within"></button>
+                        <button class="carousel-dot" type="button" role="tab" aria-selected="false" aria-label="Show Ultrakill Vertical Slice"></button>
+                        <button class="carousel-dot" type="button" role="tab" aria-selected="false" aria-label="Show Godspeed"></button>
+                    </div>
+                    <button class="carousel-arrow carousel-next" type="button" aria-label="Next project">→</button>
+                </div>
+                <a class="scroll-prompt" href="#work">See the rest <span aria-hidden="true">↓</span></a>
             </div>
-            <div class="name">
-                <img class="portrait" src="IMG_4874.jpg" alt="Portrait of Mo Kharboutli" width="230" height="300">
-                <div class="name-details">
-                    <h2>Mo Kharboutli</h2>
-                    <p>C# programmer</p>
+        </section>
+
+        <section id="work" class="work-section">
+            <div class="work-content">
+                <h3>Work</h3>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="TheCreatureWithin Banner.jpg" alt="The Creature Within game project">
+                        </div>
+                        <div class="project-info">
+                            <h4>The creature within</h4>
+                            <p>Brief description of what this project does and the technologies used.</p>
+                            <a href="TheCreatureWithin.html" class="project-link">View Project →</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="imDSfbzdhbrdbage.png" alt="Ultrakill Vertical Slice game project">
+                        </div>
+                        <div class="project-info">
+                            <h4>Ultrakill Vertical Slice</h4>
+                            <p>A project where me and a group of developers and artists recreated the beginning of Ultrakill.</p>
+                            <a href="Verticalslice.html" class="project-link">View Project →</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="imdbrhrsreage.png" alt="Godspeed game project">
+                        </div>
+                        <div class="project-info">
+                            <h4>Godspeed</h4>
+                            <p>The first project I made with a team of developers and artists.</p>
+                            <a href="Mythe.html" class="project-link">View Project →</a>
+                        </div>
+                    </article>
+                    <article class="project-card extra-project" hidden aria-hidden="true">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Project 4">
+                        </div>
+                        <div class="project-info">
+                            <h4>Project Title</h4>
+                            <p>Brief description of what this project does and the technologies used.</p>
+                            <a href="Project4.html" class="project-link">View Project →</a>
+                        </div>
+                    </article>
+                    <article class="project-card extra-project" hidden aria-hidden="true">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Project 5">
+                        </div>
+                        <div class="project-info">
+                            <h4>Project Title</h4>
+                            <p>Brief description of what this project does and the technologies used.</p>
+                            <a href="Project5.html" class="project-link">View Project →</a>
+                        </div>
+                    </article>
+                    <article class="project-card extra-project" hidden aria-hidden="true">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300" alt="Project 6">
+                        </div>
+                        <div class="project-info">
+                            <h4>Project Title</h4>
+                            <p>Brief description of what this project does and the technologies used.</p>
+                            <a href="Project6.html" class="project-link">View Project →</a>
+                        </div>
+                    </article>
+                </div>
+                <button class="more-projects-toggle" id="moreProjectsToggle" type="button" aria-expanded="false">
+                    <span class="arrow" aria-hidden="true">↓</span>
+                    <span class="label">Show More</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="intro-section" aria-label="Introduction">
+            <div class="intro-content">
+                <p class="intro-greeting">Hello! I'm</p>
+                <div class="intro-name">
+                    <img src="IMG_4874.jpg" alt="Portrait of Mo Kharboutli" width="160" height="210">
+                    <div>
+                        <h1>Mo Kharboutli</h1>
+                        <p>C# programmer</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -44,84 +161,6 @@
                    I am a very dedicated person, and I am always trying to improve my skills and learn new things. I'd like to think that I'm a very easy person to talk to, and I am always open to new opportunities and collaborations. So, if you want to work with me or just chat about game development, feel free to reach out to me!
                 </p>
                 <a href="CV-2.pdf" class="about-cv-link" download>Download CV →</a>
-            </div>
-        </section>
-
-        <section id="work" class="work-section">
-            <div class="work-content">
-                <h3>Work</h3>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="TheCreatureWithin Banner.jpg" alt="Project 1">
-                        </div>
-                        <div class="project-info">
-                            <h4>The creature within</h4>
-                            <p>Brief description of what this project does and the technologies used.</p>
-                            <a href="TheCreatureWithin.html" class="project-link">View Project →</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="imDSfbzdhbrdbage.png" alt="Project 2">
-                        </div>
-                        <div class="project-info">
-                            <h4>Ultrakill Vertical Slice</h4>
-                            <p>A project where me and a group of developer and artists  recreated the beginning of Ultrakill</p>
-                            <a href="Verticalslice.html" class="project-link">View Project →</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="imdbrhrsreage.png" alt="Project 3">
-                        </div>
-                        <div class="project-info">
-                            <h4>Godspeed</h4>
-                            <p>The first project I made with a team of developers and artists.</p>
-                            <a href="Mythe.html" class="project-link">View Project →</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card extra-project" hidden aria-hidden="true">
-                        <div class="project-image">
-                            <img src="https://via.placeholder.com/400x300" alt="Project 4">
-                        </div>
-                        <div class="project-info">
-                            <h4>Project Title</h4>
-                            <p>Brief description of what this project does and the technologies used.</p>
-                            <a href="Project4.html" class="project-link">View Project →</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card extra-project" hidden aria-hidden="true">
-                        <div class="project-image">
-                            <img src="https://via.placeholder.com/400x300" alt="Project 5">
-                        </div>
-                        <div class="project-info">
-                            <h4>Project Title</h4>
-                            <p>Brief description of what this project does and the technologies used.</p>
-                            <a href="Project5.html" class="project-link">View Project →</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card extra-project" hidden aria-hidden="true">
-                        <div class="project-image">
-                            <img src="https://via.placeholder.com/400x300" alt="Project 6">
-                        </div>
-                        <div class="project-info">
-                            <h4>Project Title</h4>
-                            <p>Brief description of what this project does and the technologies used.</p>
-                            <a href="Project6.html" class="project-link">View Project →</a>
-                        </div>
-                    </article>
-                </div>
-
-                <button class="more-projects-toggle" id="moreProjectsToggle" type="button" aria-expanded="false">
-                    <span class="arrow" aria-hidden="true">↓</span>
-                    <span class="label">Show More</span>
-                </button>
             </div>
         </section>
 

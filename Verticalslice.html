@@ -23,6 +23,10 @@
 			padding: 20px 40px;
 			background: #fdfbf7;
 			border-bottom: 1px solid rgba(80, 45, 39, 0.12);
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+			pointer-events: auto;
 		}
 
 		.slice-header a {
@@ -30,6 +34,18 @@
 			text-decoration: none;
 			font-weight: 600;
 			letter-spacing: 0.5px;
+		}
+
+		.slice-header nav {
+			display: flex;
+			gap: 24px;
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+		}
+
+		.slice-page .slice-header nav a {
+			color: #502d27;
 		}
 
 		.slice-section {
@@ -102,6 +118,10 @@
 		}
 
 		.shooting-card {
+			grid-column: 1 / -1;
+		}
+
+		.gif-card {
 			grid-column: 1 / -1;
 		}
 
@@ -224,6 +244,22 @@
 			color: rgba(80, 45, 39, 0.8);
 		}
 
+		.shooting-code-image {
+			display: block;
+			width: 100%;
+			max-width: 960px;
+			height: auto;
+			margin: 24px auto;
+		}
+
+		.trail-renderer-image {
+			display: block;
+			width: 100%;
+			max-width: none;
+			height: auto;
+			margin: 24px auto;
+		}
+
 		@media (max-width: 860px) {
 			.shooting-preview img {
 				height: 320px;
@@ -233,11 +269,23 @@
 				height: 440px;
 			}
 		}
+		
+		.slice-card p.ExplanationShooting {
+			margin: 24px 16px 20px;
+			font-size: 19px;
+			line-height: 1.65;
+			color: #523b32;
+		}
 	</style>
 </head>
 <body class="slice-page">
 	<header class="slice-header">
 		<a href="index.html">Back to portfolio</a>
+		<nav aria-label="Portfolio navigation">
+			<a href="index.html#work">Work</a>
+			<a href="index.html#about">About</a>
+			<a href="index.html#contact">Contact</a>
+		</nav>
 		<a href="#gifs">Jump to GIFs</a>
 	</header>
 
@@ -271,43 +319,37 @@
 				</article>
 
 				<article class="slice-card gifs-card" id="gifs">
-					<h2>GIF</h2>
-					<p>Add the gameplay GIF here to show the slice in action.</p>
 					<div class="gif-grid">
 						<figure class="gif-item">
 							<img src="VerticalSlice.gif" alt="Vertical slice gameplay GIF">
-							<figcaption class="gif-caption">Gameplay highlight 1</figcaption>
 						</figure>
 					</div>
-				</article>
-
-				<article class="slice-card shooting-card">
-					<h2>How I made the shooting</h2>
-					<p>
-						The shooting was made with a raycast that would detect if the player was aiming at an enemy. If the player was aiming at an enemy, the enemy would take damage and play an attack animation made by the artists. The shooting was made to feel quick and responsive, so the player could react fast and keep moving.
-					</p>
-					<ul class="slice-list">
-						<li>I set up the shooting logic so input felt immediate and easy to control.</li>
-						<li>I worked on the visual feedback so each shot looked clear on screen.</li>
-						<li>I balanced the mechanic through testing until it felt smooth in the project.</li>
-					</ul>
+					
 					<div class="shooting-preview">
 						<img src="RecordingofGame_-_Trim-ezgif.com-video-to-gif-converter.gif" alt="Placeholder for shooting GIF">
 						<div class="shooting-preview-caption">This is the shooting development process</div>
 					</div>
-				</article>
-
-				<article class="slice-card shooting-card">
-					<h2>Visual sheet</h2>
-					<p>
-						This is the visual sheet I made to showcase the shooting simply
-					</p>
 					<div class="process-picture">
+						<h3>Visual sheet</h3>
+						<p>This is the visual sheet I made to showcase the shooting simply.</p>
 						<img src="image23432423432423.png" alt="Development process picture placeholder">
-						<div class="process-picture-caption">Visual sheet</div>
 					</div>
+					<img class="shooting-code-image" src="Screensidhger[pfghknot_1.png" alt="Shooting script screenshot">
+					<h2>Script explanation</h2>
+					<p class="ExplanationShooting">
+						This is the script that controls the shooting mechanic. The script uses Raycast that shoots a ray from the camera to detect hits. if the target hit has the tag "Enemy", it will take damage. every time the player shoots, the script plays the shooting animation and waits until the animation is complete until the next shot can be fired.
+					</p>
 				</article>
 
+				<article class="slice-card gif-card">
+					<div class="gif-grid">
+						<img class="trail-renderer-image" src="ScreenshqEGewgerot_1.png" alt="TrailRenderer script screenshot">
+					</div>
+					<h2>TrailRenderer</h2>
+					<p class="ExplanationShooting">
+						This is the script that controls the TrailRenderer. The script uses a coroutine to enable the TrailRenderer for a short duration and then disables it. This creates a visual effect of a trail following the bullet's path, enhancing the shooting experience.
+					</p>
+				</article>
 			</div>
 		</section>
 	</main>
